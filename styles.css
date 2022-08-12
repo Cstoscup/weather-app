@@ -1,0 +1,59 @@
+body {
+  color: rgb(112, 117, 122);
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 58px;
+}
+
+.app {
+  margin-top: 40px;
+}
+
+.date-time {
+  text-align: center;
+  font-size: 22px;
+}
+
+.current-temperature {
+  text-align: center;
+  font-size: 90px;
+  padding: 14px 0;
+  line-height: 90px;
+}
+
+.current-stats {
+  text-align: center;
+  padding: 25px;
+  font-size: 22px;
+}
+
+.partly-cloudy {
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+}
+
+.future {
+  font-size: 24px;
+}
+
+.future-temp {
+  text-align: center;
+}
+
+.current-weather-icon {
+  height: 150px;
+  vertical-align: middle;
+  padding-bottom: 15px;
+}
+
+.future-icon {
+  height: 72px;
+}
+
+#current-location-button {
+    font-size: 13px;
+    line-height: 1.5rem;
+}

@@ -37,8 +37,9 @@ function getCity(coordinates) {
 }
 
 function displayGeo(response) {
+    fTemp = response.data.main.temp;
     document.querySelector("h1").innerHTML = response.data.name;
-    document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
+    document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
     document.querySelector("#weather").innerHTML = response.data.weather[0].description;
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -46,9 +47,10 @@ function displayGeo(response) {
 }
 
 function displaySearch(response) {
-    console.log(response);
+    fTemp = response.data.main.temp;
+    console.log(fTemp);
     document.querySelector("h1").innerHTML = response.data.name;
-    document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
+    document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
     document.querySelector("#weather").innerHTML = response.data.weather[0].description;
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -79,6 +81,22 @@ function convertCity(response) {
     let coordinates = [response.data[0].lat, response.data[0].lon];
     getCity(coordinates);
 }
+
+function displayCelsius(event) {
+    event.preventDefault();
+    document.querySelector("#current-temp").innerHTML = Math.round((fTemp - 32) * 5 / 9);
+}
+
+function displayFahrenheit(event) {
+    event.preventDefault();
+    document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
+}
+
+let fTemp = null;
+
+document.querySelector("#celsius").addEventListener("click", displayCelsius);
+
+document.querySelector("#fahrenheit").addEventListener("click", displayFahrenheit);
 
 document.querySelector("#search-engine").addEventListener("submit", handleSubmit);
 

@@ -67,6 +67,11 @@ img {
     border-color: blue;
 }
 
+#tempUnits {
+    font-size: 16px;
+    vertical-align: 17px;
+}
+
 #current-location-button {
     font-size: 13px;
     line-height: 1.5rem;

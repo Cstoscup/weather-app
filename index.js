@@ -39,7 +39,7 @@ function getCity(coordinates) {
 function displayGeo(response) {
     document.querySelector("h1").innerHTML = response.data.name;
     document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
-    document.querySelector("#weather").innerHTML = response.data.weather[0].main;
+    document.querySelector("#weather").innerHTML = response.data.weather[0].description;
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
 }
@@ -47,7 +47,7 @@ function displayGeo(response) {
 function displaySearch(response) {
     document.querySelector("h1").innerHTML = response.data.name;
     document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
-    document.querySelector("#weather").innerHTML = response.data.weather[0].main;
+    document.querySelector("#weather").innerHTML = response.data.weather[0].description;
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
 }

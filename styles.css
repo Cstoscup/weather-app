@@ -67,6 +67,15 @@ img {
     border-color: blue;
 }
 
+.current-temperature .active {
+    color: #353535;
+    cursor: default;
+}
+
+.current-temperature .active:hover {
+    text-decoration: none;
+}
+
 #tempUnits {
     font-size: 16px;
     vertical-align: 17px;

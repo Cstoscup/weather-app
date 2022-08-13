@@ -84,11 +84,15 @@ function convertCity(response) {
 
 function displayCelsius(event) {
     event.preventDefault();
+    document.querySelector("#fahrenheit").classList.remove("active");
+    document.querySelector("#celsius").classList.add("active");
     document.querySelector("#current-temp").innerHTML = Math.round((fTemp - 32) * 5 / 9);
 }
 
 function displayFahrenheit(event) {
     event.preventDefault();
+    document.querySelector("#celsius").classList.remove("active");
+    document.querySelector("#fahrenheit").classList.add("active");
     document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
 }
 

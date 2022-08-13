@@ -1,3 +1,37 @@
+function formatDate(response) {
+    let long = response.data.coord.lon;
+    let lat = response.data.coord.lat;
+    let timestamp = response.data.dt;
+    let apiKey = "AIzaSyAmEhwxiu-sfYbG1VkFzx-T3wXsGIDqK-8";
+    let url = `https://maps.googleapis.com/maps/api/timezone/json?location=${lat}%2C${long}&timestamp=${timestamp}&key=AIzaSyAmEhwxiu-sfYbG1VkFzx-T3wXsGIDqK-8`;
+    axios.get(url).then(getDate);
+}
+
+function getDate(response) {
+    let timezone = response.data.timeZoneId;
+    let url = `https://worldtimeapi.org/api/timezone/${timezone}`;
+    axios.get(url).then(displayDate);
+}
+
+function displayDate(response) {
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ];
+    let day = days[response.data.day_of_week];
+    let hours = fixHours(parseInt(response.data.datetime.slice(11, 13)));
+    let minutes = response.data.datetime.slice(14, 16);
+    let unit = getTimeUnit(parseInt(response.data.datetime.slice(11, 13)));
+    let time = `${hours}:${minutes} ${unit}`;
+
+    document.querySelector("#current-date-time").innerHTML = day + "<br>" + time;
+}
+
 function fixHours(hours) {
   if (hours > 12) {
     hours -= 12;
@@ -45,11 +79,13 @@ function displayGeo(response) {
 }
 
 function displaySearch(response) {
+    console.log(response);
     document.querySelector("h1").innerHTML = response.data.name;
     document.querySelector("#current-temp").innerHTML = Math.round(response.data.main.temp);
     document.querySelector("#weather").innerHTML = response.data.weather[0].description;
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
+    formatDate(response);
 }
 
 function search(city) {
@@ -75,24 +111,6 @@ function convertCity(response) {
     let coordinates = [response.data[0].lat, response.data[0].lon];
     getCity(coordinates);
 }
-
-let now = new Date();
-let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-];
-let hours = fixHours(now.getHours());
-let minutes = fixMinutes(now.getMinutes());
-let unit = getTimeUnit(now.getHours());
-let day = days[now.getDay()];
-let time = `${hours}:${minutes} ${unit}`;
-
-document.querySelector("#current-date-time").innerHTML = `${day}<br>${time}`;
 
 document.querySelector("#search-engine").addEventListener("submit", handleSubmit);
 

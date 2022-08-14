@@ -38,6 +38,8 @@ function getCity(coordinates) {
 
 function displayGeo(response) {
     fTemp = response.data.main.temp;
+    document.querySelector("#celsius").classList.remove("active");
+    document.querySelector("#fahrenheit").classList.add("active");
     document.querySelector("h1").innerHTML = response.data.name;
     document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
     document.querySelector("#weather").innerHTML = response.data.weather[0].description;
@@ -48,7 +50,8 @@ function displayGeo(response) {
 
 function displaySearch(response) {
     fTemp = response.data.main.temp;
-    console.log(fTemp);
+    document.querySelector("#celsius").classList.remove("active");
+    document.querySelector("#fahrenheit").classList.add("active");
     document.querySelector("h1").innerHTML = response.data.name;
     document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
     document.querySelector("#weather").innerHTML = response.data.weather[0].description;

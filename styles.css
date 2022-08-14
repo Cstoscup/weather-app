@@ -11,7 +11,7 @@ h1, h5 {
 .app {
   width: 600px;
   display: black;
-  margin: 40px auto;
+  margin: 40px auto 0;
 }
 
 .btn-light {
@@ -52,7 +52,7 @@ h1, h5 {
 
 #github-link {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
 }
 
 #weather {

@@ -37,7 +37,7 @@
                                          id="search-bar"
                                          placeholder="Enter a location" />
                               </div>
-                              <div class="col-2">
+                              <div class="col-2 search-button">
                                   <input type="submit"
                                          class="form-control btn btn-primary btn-block shadow-sm"
                                          id="submit-button"
@@ -46,7 +46,7 @@
                               <div class="col-2">
                                   <button class="btn btn-outline-primary btn-block shadow-sm"
                                           id="current-location-button">
-                                      <img src="images/current-location.svg" />
+                                      <img src="images/current-location.svg" class="location-image" />
                                   </button>
                               </div>
                           </div>
@@ -54,47 +54,41 @@
                   </form>
 
 
-                          <h1 class="city"></h1>
+                  <h1 class="city"></h1>
+                  <h5 id="current-date-time"></h5>
 
-                          <h5 id="current-date-time"></h5>
 
-   
                   <div class="row current-stats">
-                      <div class="col-6">
+                      <div class="col-7">
                           <img src=""
                                alt="Current Weather Icon"
                                class="current-weather-icon" id="current-weather-icon" />
-                     
+
                           <span class="current-temperature" id="current-temp"></span>
                           <span id="tempUnits"><a href="" id="fahrenheit" class="active">°F</a> | <a href="" id="celsius">°C</a></span>
                       </div>
-                      <div class="col-6 weather-stats">
+                      <div class="col-5 weather-stats">
                           <span id="weather"></span><br />
                           Humidity: <span id="humidity"></span>%<br />
                           Wind Speed: <span id="wind">4</span><span id="wind-unit"> mph</span>
                       </div>
                   </div>
 
-
-
-                     
-                  </div>
-                  <br />
-                  <div class="row">
-                      <div class="col">
+                  <div class="row button-row">
+                      <div class="col specific-city-button">
                           <button class="btn btn-primary btn-block shadow-sm" id="Paris">Paris</button>
                       </div>
-                      <div class="col">
+                      <div class="col specific-city-button">
                           <button class="btn btn-primary btn-block shadow-sm" id="Sydney">
                               Sydney
                           </button>
                       </div>
-                      <div class="col">
+                      <div class="col specific-city-button">
                           <button class="btn btn-primary btn-block shadow-sm" id="Tokyo">
                               Tokyo
                           </button>
                       </div>
-                      <div class="col">
+                      <div class="col specific-city-button">
                           <button class="btn btn-primary btn-block shadow-sm" id="New-York">
                               New York
                           </button>
@@ -103,6 +97,7 @@
               </div>
           </div>
       </div>
+
       <p id="github-link"><a href="https://github.com/Cstoscup/weather-app" target="_blank">Open-source code</a>, by Callie Stoscup</p>;
       <script src="index.js"></script>
   </body>

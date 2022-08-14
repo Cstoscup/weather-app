@@ -4,8 +4,8 @@ body {
     line-height: 1.25;
 }
 
-h1 {
-    margin-bottom: 0;
+h1, h5 {
+    margin-bottom: 5px;
 }
 
 .app {
@@ -65,4 +65,21 @@ h1 {
     margin-top: 8.75px;
     line-height: 1.25;
 
+}
+
+.search-button {
+    padding: 0;
+}
+
+#current-location-button {
+    padding: 0;
+    height: 38px;
+}
+
+.location-image {
+    height: 85%;
+}
+
+.current-stats {
+    margin: 20px 0;
 }

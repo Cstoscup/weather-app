@@ -2,16 +2,23 @@ body {
     color: #353535;
     font-family: "Roboto", sans-serif;
     line-height: 1.25;
+    background-color: #b7c9e2;
 }
 
 h1, h5 {
     margin-bottom: 5px;
 }
 
+hr {
+    margin: 30px 16px;
+}
+
 .app {
   width: 600px;
-  display: black;
-  margin: 40px auto 0;
+  display: block;
+  margin: 40px auto;
+  padding: 0;
+  border-radius: 10px;
 }
 
 .btn-light {
@@ -86,9 +93,12 @@ h1, h5 {
 }
 
 .forecast {
-    padding: 20px 0;
+    padding: 0 0 20px;
     text-align: center;
     font-size: 14px;
+}
+
+.forecast-day {
 }
 
 .forecast-icon {
@@ -96,7 +106,8 @@ h1, h5 {
     max-width: 90%;
     transform: scale(1.5);
     overflow: hidden;
-    height: 70px;
+    height: 55px;
+    padding: 0 20px;
 }
 
 .temp-high {
@@ -104,6 +115,6 @@ h1, h5 {
 }
 
 .temp-low {
-    opacity: 0.6;
     font-size: 12px;
+    opacity: 0.6;
 }

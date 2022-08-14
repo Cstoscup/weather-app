@@ -46,6 +46,7 @@ function displayGeo(response) {
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
     formatDate(response);
+    getForecast(response.data.coord);
 }
 
 function displaySearch(response) {
@@ -59,6 +60,49 @@ function displaySearch(response) {
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
     document.querySelector("#current-weather-icon").setAttribute("src", `images/${response.data.weather[0].icon}.svg`)
     formatDate(response);
+    getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+    let lat = coordinates.lat;
+    let lon = coordinates.lon;
+    let apiKey = "9ed24e5c436afdb265857268e29a26c9";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    let date = document.querySelector("#current-date-time").innerHTML;
+    date = date.split(" ");
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let today = "";
+    for (let i = 0; i < days.length; i++) {
+        if (days[i] === date[0]) {
+            today = i;
+        }
+    }
+
+    let tomorrow = today + 1;
+  
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+
+    for (let j = 0; j < 5; j++) {
+        let icon = response.data.daily[j].weather[0].icon;
+        let tempHigh = Math.round(response.data.daily[j].temp.max);
+        let tempLow = Math.round(response.data.daily[j].temp.min);
+        forecastHTML = forecastHTML + `
+            
+                <div class="col">
+                    <span class="forecast-day">${days[tomorrow + j]}</span><br />
+                    <img src="images/${icon}.svg" class="forecast-icon" /><br />
+                    <span class="temp-high">${tempHigh}°F</span><span> /</span><span class="temp-low"> ${tempLow}°F</span>
+                </div>`;
+
+        forecastElement.innerHTML = forecastHTML;
+    }
+
+    forecastElement.innerHTML = forecastHTML + `</div>`;
 }
 
 function search(city) {
@@ -118,5 +162,6 @@ document.querySelector("#New-York").addEventListener("click", buttonClick);
 document.querySelector("#current-location-button").addEventListener("click", clickMe);
 
 search("New York");
+
 
 

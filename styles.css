@@ -5,85 +5,49 @@ body {
 }
 
 h1 {
-  font-size: 24px;
-}
-
-img {
-    height: 25px
+    margin-bottom: 0;
 }
 
 .app {
-  width: 710px;
+  width: 600px;
   display: black;
   margin: 40px auto;
-}
-
-.date-time {
-  text-align: center;
-  font-size: 14px;
-}
-
-.current-temperature {
-    text-align: center;
-    font-size: 40px;
-}
-
-.current-stats {
-  text-align: center;
-  font-size: 14px;
-  padding-bottom: 14px;
-}
-
-.partly-cloudy {
-  font-size: 40px;
-  text-align: center;
-}
-
-.future {
-  font-size: 14px;
-  margin: -25px;
-  padding: 10px;
-}
-
-.future-temp {
-  text-align: center;
-}
-
-.current-weather-icon {
-  height: 100px;
-  vertical-align: middle;
-  padding-bottom: 15px;
-}
-
-.future-icon {
-  height: 45px;
-}
-
-.card.current {
-    height: 244.15px;
 }
 
 .btn-light {
     border-color: blue;
 }
 
-.current-temperature .active {
+#tempUnits .active {
     color: #353535;
     cursor: default;
 }
 
-.current-temperature .active:hover {
+#tempUnits .active:hover {
     text-decoration: none;
+}
+
+#current-weather-icon {
+    max-height: 100%;
+    max-width: 100%;
+    transform:scale(1.5);
+    overflow:hidden;
+    height: 70px;
+}
+
+.current-temperature {
+    padding-left: 15px;
+    font-size: 60px;
+    vertical-align: middle;
+}
+
+#current-date-time {
+    font-size: 14px;
 }
 
 #tempUnits {
     font-size: 16px;
-    vertical-align: 17px;
-}
-
-#current-location-button {
-    font-size: 13px;
-    line-height: 1.5rem;
+    vertical-align: 14px;
 }
 
 #github-link {
@@ -93,4 +57,12 @@ img {
 
 #weather {
     text-transform: capitalize;
+}
+
+.weather-stats {
+    font-size: 14px;
+    display: block;
+    margin-top: 8.75px;
+    line-height: 1.25;
+
 }

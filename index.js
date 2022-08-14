@@ -17,7 +17,7 @@ function displayDate(response) {
         time_array.shift();
     }
     time = time_array.join("");
-    document.querySelector("#current-date-time").innerHTML = date_array[0] + "<br>" + time;
+    document.querySelector("#current-date-time").innerHTML = date_array[0] + " " + time;
 }
 
 function clickMe(event) {

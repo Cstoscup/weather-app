@@ -46,109 +46,38 @@
                               <div class="col-2">
                                   <button class="btn btn-outline-primary btn-block shadow-sm"
                                           id="current-location-button">
-                                    <img src="images/current-location.svg"/> 
+                                      <img src="images/current-location.svg" />
                                   </button>
                               </div>
                           </div>
                       </div>
                   </form>
 
-                  <div class="row">
+
+                          <h1 class="city"></h1>
+
+                          <h5 id="current-date-time"></h5>
+
+   
+                  <div class="row current-stats">
                       <div class="col-6">
-                          <div class="card current">
-                              <div class="card-body">
-                                  <div class="row align-items-center">
-                                      <div class="col-8">
-                                          <h1></h1>
-                                      </div>
-                                      <div class="col-4 date-time" id="current-date-time">
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col">
-                                      <h1 class="current-temperature">
-                                          <span id="current-temp"></span> <span id="tempUnits"><a href="" id="fahrenheit" class="active">°F</a> | <a href="" id="celsius">°C</a></span>
-                                          <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-02-256.png"
-                                               alt="Current Weather Icon"
-                                               class="current-weather-icon" id="current-weather-icon" />
-                                      </h1>
-                                  </div>
-                              </div>
-                              <div class="row current-stats">
-                                  <div class="col">
-                                      <span id="weather"></span>
-                                  </div>
-                                  <div class="col">
-                                      <strong>Humidity</strong><br /><span id="humidity"></span>%
-                                  </div>
-                                  <div class="col">
-                                      <strong>Wind</strong><br /><span id="wind">4</span><span id="wind-unit"> mph</span>
-                                  </div>
-                              </div>
-                          </div>
+                          <img src=""
+                               alt="Current Weather Icon"
+                               class="current-weather-icon" id="current-weather-icon" />
+                     
+                          <span class="current-temperature" id="current-temp"></span>
+                          <span id="tempUnits"><a href="" id="fahrenheit" class="active">°F</a> | <a href="" id="celsius">°C</a></span>
                       </div>
-                      <div class="col-6">
-                          <div class="card">
-                              <div class="card-body">
-                                  <div class="row align-items-center future">
-                                      <div class="col">Sunday</div>
-                                      <div class="col future-temp">
-                                          <strong>89°</strong> / 61°
-                                      </div>
-                                      <div class="col partly-cloudy">
-                                          <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-02-256.png"
-                                               alt="Current Weather Icon"
-                                               class="future-icon" />
-                                      </div>
-                                  </div>
-                                  <div class="row align-items-center future">
-                                      <div class="col">Monday</div>
-                                      <div class="col future-temp">
-                                          <strong>78°</strong> / 57°
-                                      </div>
-                                      <div class="col partly-cloudy">
-                                          <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-256.png"
-                                               alt="Current Weather Icon"
-                                               class="future-icon" />
-                                      </div>
-                                  </div>
-                                  <div class="row align-items-center future">
-                                      <div class="col">Tuesday</div>
-                                      <div class="col future-temp">
-                                          <strong>83°</strong> / 64°
-                                      </div>
-                                      <div class="col partly-cloudy">
-                                          <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-23-256.png"
-                                               alt="Current Weather Icon"
-                                               class="future-icon" />
-                                      </div>
-                                  </div>
-                                  <div class="row align-items-center future">
-                                      <div class="col">Wednesday</div>
-                                      <div class="col future-temp">
-                                          <strong>80°</strong> / 57°
-                                      </div>
-                                      <div class="col partly-cloudy">
-                                          <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-31-256.png"
-                                               alt="Current Weather Icon"
-                                               class="future-icon" />
-                                      </div>
-                                  </div>
-                                  <div class="row align-items-center future">
-                                      <div class="col">Thursday</div>
-                                      <div class="col future-temp">
-                                          <strong>82°</strong> / 58°
-                                      </div>
-                                      <div class="col partly-cloudy">
-                                          <img src="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-01-256.png"
-                                               alt="Current Weather Icon"
-                                               class="future-icon" />
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
+                      <div class="col-6 weather-stats">
+                          <span id="weather"></span><br />
+                          Humidity: <span id="humidity"></span>%<br />
+                          Wind Speed: <span id="wind">4</span><span id="wind-unit"> mph</span>
                       </div>
+                  </div>
+
+
+
+                     
                   </div>
                   <br />
                   <div class="row">

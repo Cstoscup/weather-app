@@ -84,3 +84,26 @@ h1, h5 {
 .current-stats {
     margin: 20px 0;
 }
+
+.forecast {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.forecast-icon {
+    max-height: 90%;
+    max-width: 90%;
+    transform: scale(1.5);
+    overflow: hidden;
+    height: 70px;
+}
+
+.temp-high {
+    font-size: 12px;
+}
+
+.temp-low {
+    opacity: 0.6;
+    font-size: 12px;
+}

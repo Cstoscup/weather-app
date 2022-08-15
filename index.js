@@ -69,8 +69,8 @@ function displaySearch(response) {
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
     document.querySelector("#current-weather-icon").setAttribute("src", `images/${icon}.svg`)
-    formatDate(response);
     getForecast(response);
+    formatDate(response);
 }
 
 function getForecast(response) {

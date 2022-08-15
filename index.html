@@ -21,93 +21,93 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
-  <body>
-      <div class="container">
-          <div class="card app">
-              <div class="card-body">
-                  <form id="search-engine">
-                      <div class="form-group">
-                          <div class="row">
-                              <div class="col-8">
-                                  <input type="search"
-                                         class="form-control"
-                                         id="search-bar"
-                                         placeholder="Enter a location" />
-                              </div>
-                              <div class="col-2 search-button">
-                                  <input type="submit"
-                                         class="form-control btn btn-secondary btn-block shadow-sm"
-                                         id="submit-button"
-                                         value="Search" />
-                              </div>
-                              <div class="col-2">
-                                  <button class="btn btn-outline-secondary btn-block shadow-sm"
-                                          id="current-location-button">
-                                      <img src="images/current-location.svg" class="location-image" />
-                                  </button>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
+<body>
+    <div class="container">
+        <div class="card app">
+            <div class="card-body">
+                <form id="search-engine">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-8">
+                                <input type="search"
+                                       class="form-control"
+                                       id="search-bar"
+                                       placeholder="Enter a location" />
+                            </div>
+                            <div class="col-2 search-button">
+                                <input type="submit"
+                                       class="form-control btn btn-secondary btn-block shadow-sm"
+                                       id="submit-button"
+                                       value="Search" />
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-outline-secondary btn-block shadow-sm"
+                                        id="current-location-button">
+                                    <img src="images/current-location.svg" class="location-image" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
 
-                  <h1 class="city"></h1>
-                  <h5 id="current-date-time"></h5>
+                <h1 class="city"></h1>
+                <h5 id="current-date-time"></h5>
 
 
-                  <div class="row current-stats">
-                      <div class="col-7">
-                          <img src=""
-                               alt="Current Weather Icon"
-                               class="current-weather-icon" id="current-weather-icon" />
+                <div class="row current-stats">
+                    <div class="col-7">
+                        <img src=""
+                             alt="Current Weather Icon"
+                             class="current-weather-icon" id="current-weather-icon" />
 
-                          <span class="current-temperature" id="current-temp"></span>
-                          <span id="tempUnits"><a href="" id="fahrenheit" class="active">°F</a> | <a href="" id="celsius">°C</a></span>
-                      </div>
-                      <div class="col-5 weather-stats">
-                          <span id="weather"></span><br />
-                          Humidity: <span id="humidity"></span>%<br />
-                          Wind Speed: <span id="wind">4</span><span id="wind-unit"> mph</span>
-                      </div>
-                  </div>
+                        <span class="current-temperature" id="current-temp"></span>
+                        <span id="tempUnits"><a href="" id="fahrenheit" class="active">°F</a> | <a href="" id="celsius">°C</a></span>
+                    </div>
+                    <div class="col-5 weather-stats">
+                        <span id="weather"></span><br />
+                        Humidity: <span id="humidity"></span>%<br />
+                        Wind Speed: <span id="wind">4</span><span id="wind-unit"> mph</span>
+                    </div>
+                </div>
 
-                  <hr />
+                <hr />
 
-                  <div class="forecast" id="forecast">
-                      <div class="row">
-                          <div class="col-2">
-                              <span class="forecast-day">Monday</span>
-                              <img src="images/01d.svg" class="forecast-icon" />
-                              <span class="temp-high">85°F</span><span> /</span><span class="temp-low"> 69°F</span>
-                          </div>
-                      </div>
-                  </div>
+                <div class="forecast" id="forecast">
+                    <div class="row">
+                        <div class="col-2">
+                            <span class="forecast-day">Monday</span>
+                            <img src="images/01d.svg" class="forecast-icon" />
+                            <span class="temp-high">85°F</span><span> /</span><span class="temp-low"> 69°F</span>
+                        </div>
+                    </div>
+                </div>
 
-                  <div class="row button-row">
-                      <div class="col specific-city-button">
-                          <button class="btn btn-secondary btn-block shadow-sm" id="Paris">Paris</button>
-                      </div>
-                      <div class="col specific-city-button">
-                          <button class="btn btn-secondary btn-block shadow-sm" id="Sydney">
-                              Sydney
-                          </button>
-                      </div>
-                      <div class="col specific-city-button">
-                          <button class="btn btn-secondary btn-block shadow-sm" id="Tokyo">
-                              Tokyo
-                          </button>
-                      </div>
-                      <div class="col specific-city-button">
-                          <button class="btn btn-secondary btn-block shadow-sm" id="New-York">
-                              New York
-                          </button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                <div class="row button-row">
+                    <div class="col specific-city-button">
+                        <button class="btn btn-secondary btn-block shadow-sm" id="Paris">Paris</button>
+                    </div>
+                    <div class="col specific-city-button">
+                        <button class="btn btn-secondary btn-block shadow-sm" id="Sydney">
+                            Sydney
+                        </button>
+                    </div>
+                    <div class="col specific-city-button">
+                        <button class="btn btn-secondary btn-block shadow-sm" id="Tokyo">
+                            Tokyo
+                        </button>
+                    </div>
+                    <div class="col specific-city-button">
+                        <button class="btn btn-secondary btn-block shadow-sm" id="New-York">
+                            New York
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <p id="github-link"><a href="https://github.com/Cstoscup/weather-app" target="_blank">Open-source code</a>, by Callie Stoscup</p>;
-      <script src="index.js"></script>
-  </body>
+    <p id="github-link"><a href="https://github.com/Cstoscup/weather-app" target="_blank">Open-source code</a>, by Callie Stoscup</p>;
+    <script src="index.js"></script>
+</body>
 </html>

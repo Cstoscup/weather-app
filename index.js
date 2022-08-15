@@ -51,6 +51,13 @@ function displayGeo(response) {
 
 function displaySearch(response) {
     fTemp = response.data.main.temp;
+    let icon = response.data.weather[0].icon;
+    let timeOfDay = icon[2];
+    if (timeOfDay === "n") {
+        document.body.style.backgroundColor = "#011E33";
+    } else {
+        document.body.style.backgroundColor = "#b7c9e2";
+    }
     document.querySelector("#celsius").classList.remove("active");
     document.querySelector("#fahrenheit").classList.add("active");
     document.querySelector("h1").innerHTML = response.data.name;
@@ -58,7 +65,7 @@ function displaySearch(response) {
     document.querySelector("#weather").innerHTML = response.data.weather[0].description;
     document.querySelector("#humidity").innerHTML = response.data.main.humidity;
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
-    document.querySelector("#current-weather-icon").setAttribute("src", `images/${response.data.weather[0].icon}.svg`)
+    document.querySelector("#current-weather-icon").setAttribute("src", `images/${icon}.svg`)
     formatDate(response);
     getForecast(response.data.coord);
 }

@@ -55,8 +55,11 @@ function displaySearch(response) {
     let timeOfDay = icon[2];
     if (timeOfDay === "n") {
         document.body.style.backgroundColor = "#011E33";
+        document.querySelector("p").style.color = "white";
     } else {
-        document.body.style.backgroundColor = "#b7c9e2";
+        document.body.style.backgroundColor = "#D7E5F0";
+        document.querySelector("p").style.color = "black";
+        
     }
     document.querySelector("#celsius").classList.remove("active");
     document.querySelector("#fahrenheit").classList.add("active");

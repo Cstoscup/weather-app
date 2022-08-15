@@ -2,7 +2,7 @@ body {
     color: #353535;
     font-family: "Roboto", sans-serif;
     line-height: 1.25;
-    background-color: #b7c9e2;
+    background-color: #D7E5F0;
 }
 
 h1, h5 {
@@ -58,10 +58,31 @@ hr {
     vertical-align: 14px;
 }
 
-#github-link {
+#links {
     text-align: center;
     color: white;
+
 }
+
+.github-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+    color: inherit;
+ }
+
+.linkedin-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+    .linkedin-link:hover {
+        text-decoration: underline;
+        color: inherit;
+    }
 
 #weather {
     text-transform: capitalize;

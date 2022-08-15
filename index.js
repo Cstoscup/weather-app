@@ -70,14 +70,22 @@ function displaySearch(response) {
     document.querySelector("#wind").innerHTML = response.data.wind.speed;
     document.querySelector("#current-weather-icon").setAttribute("src", `images/${icon}.svg`)
     formatDate(response);
-    getForecast(response.data.coord);
+    getForecast(response);
 }
 
-function getForecast(coordinates) {
-    let lat = coordinates.lat;
-    let lon = coordinates.lon;
+function getForecast(response) {
+    let lat = response.data.coord.lat;
+    let lon = response.data.coord.lon;
     let apiKey = "9ed24e5c436afdb265857268e29a26c9";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+    let apiUrl = "";
+    if (temperatureUnit === "Fahrenheit") {
+        apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+        temperatureUnit = "Celsius";
+    } else {
+        apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+        temperatureUnit = "Fahrenheit";
+    }
+    
     axios.get(apiUrl).then(displayForecast);
 }
 
@@ -91,12 +99,9 @@ function displayForecast(response) {
             today = i;
         }
     }
-
     let tomorrow = today + 1;
-  
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
-
     for (let j = 0; j < 5; j++) {
         let icon = response.data.daily[j].weather[0].icon;
         let tempHigh = Math.round(response.data.daily[j].temp.max);
@@ -111,7 +116,6 @@ function displayForecast(response) {
 
         forecastElement.innerHTML = forecastHTML;
     }
-
     forecastElement.innerHTML = forecastHTML + `</div>`;
 }
 
@@ -144,6 +148,11 @@ function displayCelsius(event) {
     document.querySelector("#fahrenheit").classList.remove("active");
     document.querySelector("#celsius").classList.add("active");
     document.querySelector("#current-temp").innerHTML = Math.round((fTemp - 32) * 5 / 9);
+    temperatureUnit = "Celsius";
+    let cityName = document.querySelector("h1").innerHTML;
+    let apiKey = "9ed24e5c436afdb265857268e29a26c9";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(getForecast);
 }
 
 function displayFahrenheit(event) {
@@ -151,9 +160,16 @@ function displayFahrenheit(event) {
     document.querySelector("#celsius").classList.remove("active");
     document.querySelector("#fahrenheit").classList.add("active");
     document.querySelector("#current-temp").innerHTML = Math.round(fTemp);
+    let cityName = document.querySelector("h1").innerHTML;
+    temperatureUnit = "Fahrenheit";
+    let apiKey = "9ed24e5c436afdb265857268e29a26c9";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(getForecast);
 }
 
 let fTemp = null;
+
+let temperatureUnit = "Fahrenheit";
 
 document.querySelector("#celsius").addEventListener("click", displayCelsius);
 

@@ -80,7 +80,7 @@ function getForecast(response) {
     let apiUrl = "";
     if (temperatureUnit === "Fahrenheit") {
         apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
-        temperatureUnit = "Celsius";
+        temperatureUnit = "Fahrenheit";
     } else {
         apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
         temperatureUnit = "Fahrenheit";
